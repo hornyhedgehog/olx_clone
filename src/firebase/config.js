@@ -3,13 +3,13 @@ import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
 import 'firebase/compat/storage'
 const firebaseConfig = {
-    apiKey: "AIzaSyCggZCcBun0cwNfOWGC2K8pZcgIRWMfqwY",
-    authDomain: "olx-sijeesh.firebaseapp.com",
-    projectId: "olx-sijeesh",
-    storageBucket: "olx-sijeesh.appspot.com",
-    messagingSenderId: "767411886432",
-    appId: "1:767411886432:web:2ef6862afc88f2c423a605",
-    measurementId: "G-4ELNR9DJHL"
+    apiKey: "AIzaSyA8GqHLAShg1JyQyoHDTNZp7z3vVvOctpg",
+    authDomain: "olxcopy-7dc44.firebaseapp.com",
+    projectId: "olxcopy-7dc44",
+    storageBucket: "olxcopy-7dc44.appspot.com",
+    messagingSenderId: "808817250984",
+    appId: "1:808817250984:web:b240799befef17ea96289d",
+    measurementId: "G-98JDSWKB0B"
   };
 
   export const Firebase= firebase.initializeApp(firebaseConfig)//named export
