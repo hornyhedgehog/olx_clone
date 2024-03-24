@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Header from '../Components/Header/Header'
-import View from '../Components/View/View'
+import ViewComponent from '../Components/View/ViewComponent'
 
 
 function ViewPost(props) {
@@ -9,7 +9,7 @@ function ViewPost(props) {
         <div>
             
             <Header />
-            <View/>
+            <ViewComponent/>
             
         </div>
     )

@@ -13,6 +13,17 @@
 }
 
 .card .image-container .favorite {
+    width: 15px;
+    height: 15px;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+    position: absolute;
+}
+
+.card .image-container .favorite img:hover {
+    width: 15px;
+    height: 15px;
     top: 5px;
     right: 5px;
     z-index: 2;
@@ -42,10 +53,11 @@
 }
 
 .card .content .rate {
-    font-size: small;
+    font-size: medium;
     font-weight: bold;
     display: flex;
     justify-content: flex-end;
+    margin-right: 10px;
 }
 
 .card .content #content-left {
@@ -67,6 +79,8 @@
     font-weight: bold;
     display: flex;
     justify-content: flex-start;
+    margin-left: 10px;
+
 }
 
 .card .date {

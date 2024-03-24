@@ -35,7 +35,7 @@ const Create = () => {
                                 price,
                                 description,
                                 url,
-                                // userId: user.uid,
+                                userId: user.uid,
                                 createdAt: date.toString(),
                             })
                             .then(() => {
@@ -52,6 +52,7 @@ const Create = () => {
                     price,
                     description,
                     url: image,
+                    userId: user.uid,
                     createdAt: date.toString(),
                 })
                 .then(() => {
