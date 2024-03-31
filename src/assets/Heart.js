@@ -1,6 +1,8 @@
 import React, {useRef} from 'react'
 
-export default function Heart() {
+export default function Heart(props) {
+
+    const {product} = props
 
     const heartRef = useRef(null)
 
@@ -11,6 +13,8 @@ export default function Heart() {
     return (
         <img id="heart" ref={heartRef} src="https://cdn.icon-icons.com/icons2/2091/PNG/512/heart_icon_128499.png"
              onMouseEnter={handleFocus} style={{width: '15px', height:'15px'}}
-             onMouseOut={handleFocus} style={{width: '15px', height:'15px'}}/>
+             onMouseOut={handleFocus} style={{width: '15px', height:'15px'}} onClick={()=>{
+             console.log('product: ' + JSON.stringify(product) + 'favorited');
+        }}/>
     )
 }

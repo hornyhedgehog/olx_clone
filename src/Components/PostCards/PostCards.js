@@ -15,8 +15,8 @@ function PostCards({product,index}) {
         history.push("/view")
       }}>
           <div className='image-container'>
-              <div className="favorite">
-                  <Heart></Heart>
+              <div className="favorite" onClick={() => undefined}>
+                  <Heart product={product}></Heart>
               </div>
               <div className="image">
                   <img src={product.url ? product.url : imagePlaceholder} alt=""/>
