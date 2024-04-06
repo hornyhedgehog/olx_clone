@@ -5,6 +5,12 @@
     height: 48px;
     display: flex;
   }
+
+.searchInputs input{
+  height: 48px;
+  padding-left: 10px;
+  display: flex;
+}
   
   .search input {
     /* background-color: #ebeeef;

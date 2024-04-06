@@ -4,19 +4,20 @@ import ContextAllPost from "./contextStore/AllPostContext";
 import ContextAuth from "./contextStore/AuthContext";
 import ContextPost from "./contextStore/PostContext";
 import MainRoutes from "./Routes/MainRoutes";
+import {FavouritesContext} from "./contextStore/FavouritesContext";
 
 function App() {
-  return (
-    <div>
-      <ContextAuth>
-        <ContextAllPost>
-          <ContextPost>
-            <MainRoutes />
-          </ContextPost>
-        </ContextAllPost>
-      </ContextAuth>
-    </div>
-  );
+    return (
+        <div>
+            <ContextAuth>
+                <ContextAllPost>
+                    <ContextPost>
+                        <MainRoutes/>
+                    </ContextPost>
+                </ContextAllPost>
+            </ContextAuth>
+        </div>
+    );
 }
 
 export default App;

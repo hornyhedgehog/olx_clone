@@ -14,6 +14,7 @@ function Posts() {
   let [posts2, setPosts2] = useState([]); //for showing all posts in Ascending order of date
   let [loading, setLoading] = useState(false);
   let [loading2,setLoading2] = useState(false)
+
   useEffect(() => {
     setLoading(true);
     setLoading2(true)

@@ -12,13 +12,17 @@
     height: 250px;
 }
 
-.card .image-container .favorite {
-    width: 15px;
-    height: 15px;
+.card-container {
+    position: relative;
+    width: 248px;
+    height: 250px;
+}
+
+.favorite {
     top: 5px;
     right: 5px;
-    z-index: 2;
     position: absolute;
+    z-index: 2;
 }
 
 .card .image-container .favorite img:hover {
@@ -88,4 +92,15 @@
     justify-content: flex-end;
     font-size: small;
 }
-  
+
+.card-container .card-overlay{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.favorite {
+    top: 5px;
+    right: 5px;
+    position: absolute;
+    z-index: 2;
+}
