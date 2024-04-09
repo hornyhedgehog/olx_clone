@@ -19,7 +19,7 @@ const Create = () => {
 
 
         setLoading(true);
-        let date = new Date().toDateString();
+        let date = `new Date().toDateString();`
 
         if (image?.name) {
             Firebase.storage()

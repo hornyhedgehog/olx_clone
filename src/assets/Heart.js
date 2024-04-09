@@ -1,34 +1,18 @@
 import React, {useContext, useRef} from 'react'
-import {Firebase} from "../firebase/config";
-import {AuthContext} from "../contextStore/AuthContext";
 
-export default function Heart(props) {
-
-    const {product} = props
-    const {user} = useContext(AuthContext);
+export default function Heart({handleClick}) {
 
     const heartRef = useRef(null)
 
     function handleFocus(event) {
-        heartRef.current.src = (event.type === "mouseout" ? "https://static-00.iconduck.com/assets.00/heart-icon-512x461-rdoishra.png" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8rhnbyViBii9Zgp_nz81682wg65hhxTG_9edPgQw15w&s")
+        heartRef.current.src = (event.type === "mouseout" ? "https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png" : "https://icons.iconarchive.com/icons/designbolts/free-valentine-heart/256/Heart-icon.png")
     }
 
-    function handleClick(product) {
-
-        if (!!user) {
-            Firebase.firestore()
-                .collection("user_favourites")
-                .add({
-                    userID: user.uid,
-                    productID: product.id
-                })
-        }
-    }
-
-    const heartImage = product
     return (
-        <img id="heart" ref={heartRef} src="https://cdn.icon-icons.com/icons2/2091/PNG/512/heart_icon_128499.png"
-             onMouseEnter={handleFocus} style={{width: '15px', height: '15px'}}
-             onMouseOut={handleFocus} style={{width: '15px', height: '15px'}} onClick={handleClick(product)}/>
+        <img id="heart" ref={heartRef}
+             src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"
+             onClick={handleClick}
+             onMouseEnter={handleFocus} style={{width: '25px', height: '25px'}}
+             onMouseOut={handleFocus} style={{width: '25px', height: '25px'}}/>
     )
 }

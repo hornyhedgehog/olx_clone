@@ -2,7 +2,7 @@ import React, { useContext,useState } from "react";
 import { useHistory } from "react-router";
 import { AllPostContext } from "../../contextStore/AllPostContext";
 import Pagination from "../Pagination/Pagination";
-import PostCards from "../PostCards/PostCards";
+import PostCard from "../PostCards/PostCard";
 import "./allposts.css";
 function AllPosts() {
   const { allPost } = useContext(AllPostContext);
@@ -10,7 +10,7 @@ function AllPosts() {
   //   return (
   //     <div className="all-post-card">
   //       {" "}
-  //       <PostCards product={product} index={index} />{" "}
+  //       <PostCard product={product} index={index} />{" "}
   //     </div>
   //   );
   // });
@@ -29,7 +29,7 @@ function AllPosts() {
     return (
       <div className="all-post-card" key={index}>
         {" "}
-        <PostCards product={product} index={index} />{" "}
+        <PostCard product={product} index={index} />{" "}
       </div>
     );
   });

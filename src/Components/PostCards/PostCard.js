@@ -2,14 +2,45 @@ import React, {useContext} from 'react'
 import Heart from '../../assets/Heart'
 import {useHistory} from "react-router-dom";
 import {PostContext} from "../../contextStore/PostContext";
-import "./postcards.css"
+import "./PostCard.css"
 import Trash from "../../assets/Trash";
+import {Firebase} from "../../firebase/config";
+import {AuthContext} from "../../contextStore/AuthContext";
 
-function PostCards({product, index}) {
+function PostCard({product, index}) {
     let {setPostContent} = useContext(PostContext)//at the time of onClick on post ,the specified post item assigned to postContent by setPostContent function and it will be stored in a global context PostContext
-
+    let productInfo = product;
     const history = useHistory()//at the time of onClick on post , we want redirect to the view post page
     const imagePlaceholder = "https://archive.org/download/placeholder-image/placeholder-image.jpg"
+
+    const {user} = useContext(AuthContext);
+
+    function handleFavouriteClick() {
+        setPostContent(product)
+
+        if (!!user || !!product) {
+            Firebase.firestore()
+                .collection("user_favourites")
+                .add({
+                    userID: user.uid, productID: product.id, addedAt: new Date().toDateString()
+                })
+            console.log(product);
+        }
+    }
+
+    function handleFavouriteClick() {
+        setPostContent(product)
+
+        if (!!user || !!product) {
+            Firebase.firestore()
+                .collection("user_favourites")
+                .add({
+                    userID: user.uid, productID: product.id, addedAt: new Date().toDateString()
+                })
+            console.log(product);
+        }
+    }
+
     return (<div className="card-container">
             <div className="card" key={index} onClick={() => {
                 setPostContent(product)
@@ -31,7 +62,7 @@ function PostCards({product, index}) {
             </div>
             <div className="card-overlay">
                 <div className="favorite">
-                    <Heart product={product}/>
+                    <Heart handleClick={handleFavouriteClick}/>
                 </div>
                 <div className="remove">
                     <Trash product={product}/>
@@ -43,4 +74,4 @@ function PostCards({product, index}) {
     )
 }
 
-export default PostCards
+export default PostCard
