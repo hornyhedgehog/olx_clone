@@ -1,21 +1,21 @@
 .card {
     margin-right: 15px;
-    max-width: 250px;
-    width: 250px;
-    height: 250px;
+    max-width: 312px;
+    width: 312px;
+    height: 424px;
     display: inline-block;
     cursor: pointer;
 }
 
 .card .image-container {
-    width: 248px;
-    height: 250px;
+    width: 312px;
+    height: 424px;
 }
 
 .card-container {
     position: relative;
-    width: 248px;
-    height: 250px;
+    width: 312px;
+    height: 424px;
 }
 
 .favorite {
@@ -45,11 +45,10 @@
 }
 
 .card .image img {
-    height: 100px;
     max-width: 100%;
-    width: 100%;
+    width: 312px;
+    height: 424px;
     max-height: 100%;
-    min-height: 100%;
     text-align: center;
     border-radius: 2px;
 }

@@ -1,11 +1,19 @@
 import React, {useEffect, useContext} from 'react';
 
 import Header from '../Components/Header/Header';
-import Banner from '../Components/Banner/Banner';
+import Featured from "../Components/Featured/Featured";
 
-import Posts from '../Components/Posts/Posts';
 import {Firebase} from '../firebase/config';
 import {AuthContext} from '../contextStore/AuthContext';
+
+
+function PopularPrinter() {
+    return null;
+}
+
+function NewestModels() {
+    return null;
+}
 
 function Home(props) {
     const {setUser} = useContext(AuthContext)
@@ -13,7 +21,6 @@ function Home(props) {
 
         Firebase.auth().onAuthStateChanged((user) => {
             setUser(user)
-
         })
 
 
@@ -22,7 +29,10 @@ function Home(props) {
     return (
         <div className="homeParentDiv">
             <Header/>
-            <Posts/>
+            <Featured/>
+            <PopularPrinter/>
+            <NewestModels/>
+            {/*<Posts/>*/}
         </div>
     );
 }
