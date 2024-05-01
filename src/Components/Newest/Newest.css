@@ -1,23 +1,24 @@
-.featuredContainer {
-    background-color: lightgrey;
-    width: 100vw;
+.newestContainer {
+    background-color: whitesmoke;
+    width: auto;
     padding: 10px 20px 10px 50px;
     height: 60vh;
 }
 
-.featuredText {
+.newestText {
     font-size: 36px;
     font-weight: bold;
     color: #227F76;
 }
 
-.featuredCardContainer {
+.newestCardContainer {
     display: flex;
     flex-direction: row;
     height: auto;
+    width: auto;
 }
 
-.featuredCardContainer > div {
+.newestCardContainer > div {
     margin-right: 2em;
 }
 

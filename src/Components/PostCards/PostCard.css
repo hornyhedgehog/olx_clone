@@ -2,6 +2,7 @@
     margin-right: 15px;
     max-width: 312px;
     width: 312px;
+    /*height: 424px;*/
     height: 424px;
     display: inline-block;
     cursor: pointer;
@@ -18,13 +19,6 @@
     height: 424px;
 }
 
-.favorite {
-    top: 5px;
-    right: 5px;
-    position: absolute;
-    z-index: 2;
-}
-
 .card .image-container .favorite img:hover {
     width: 15px;
     height: 15px;
@@ -39,7 +33,7 @@
     position: relative;
     justify-content: center;
     width: 100%;
-    height: 80%;
+    height: 100%;
     align-items: center;
     z-index: 1;
 }
@@ -54,11 +48,11 @@
 }
 
 .card .content {
-  margin-top: -30px;
+    height: auto;
 }
 
 .card .content .rate {
-    font-size: medium;
+    font-size: large;
     font-weight: bold;
     display: flex;
     justify-content: flex-end;
@@ -80,7 +74,7 @@
 }
 
 .card .content .name {
-    font-size: medium;
+    font-size: x-large;
     font-weight: bold;
     display: flex;
     justify-content: flex-start;
@@ -100,8 +94,8 @@
 }
 
 .favorite {
-    top: 5px;
-    right: 5px;
+    top: 20px;
+    right: 20px;
     position: absolute;
     z-index: 2;
 }

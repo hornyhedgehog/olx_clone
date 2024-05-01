@@ -5,13 +5,10 @@ import Featured from "../Components/Featured/Featured";
 
 import {Firebase} from '../firebase/config';
 import {AuthContext} from '../contextStore/AuthContext';
+import NewestModels from "../Components/Newest/Newest";
 
 
 function PopularPrinter() {
-    return null;
-}
-
-function NewestModels() {
     return null;
 }
 

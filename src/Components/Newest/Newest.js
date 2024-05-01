@@ -1,10 +1,10 @@
 import React, {useContext, useEffect} from "react";
 import {AllPostContext} from "../../contextStore/AllPostContext";
-import "./Featured.css";
+import "./Newest.css";
 import PostCard from "../PostCards/PostCard";
 import {Firebase} from "../../firebase/config";
 
-function Featured() {
+function NewestModels() {
     const {allPost, setAllPost} = useContext(AllPostContext)
     // todo refactor below
     useEffect(() => {
@@ -52,17 +52,17 @@ function Featured() {
 
     let displayCards = getRandomItems(allPost, 5).map((product, index) => {
         return (
-            <PostCard class="featuredCard" product={product} index={index} key={index}/>
+            <PostCard class="newestCard" product={product} index={index} key={index}/>
         )
     });
 
 
     return (
-        <div className="featuredContainer">
-            <div className="featuredText">
-                FEATURED MODELS
+        <div className="newestContainer">
+            <div className="newestText">
+                NEWEST MODELS
             </div>
-            <div className="featuredCardContainer">
+            <div className="newestCardContainer">
                 {displayCards}
             </div>
         </div>
@@ -70,4 +70,4 @@ function Featured() {
     );
 }
 
-export default Featured;
+export default NewestModels;

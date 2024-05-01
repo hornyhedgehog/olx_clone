@@ -48,7 +48,7 @@ function PostCard({product, index}) {
             }}>
                 <div className='image-container'>
                     <div className="image">
-                        <img src={product.url ? product.url : imagePlaceholder} alt=""/>
+                        <img src={product.url ? product.url : imagePlaceholder} alt="" onError={(event)=> (event.target.src = imagePlaceholder)} />
                     </div>
                 </div>
                 <div className="content">
@@ -63,9 +63,6 @@ function PostCard({product, index}) {
             <div className="card-overlay">
                 <div className="favorite">
                     <Heart handleClick={handleFavouriteClick}/>
-                </div>
-                <div className="remove">
-                    <Trash product={product}/>
                 </div>
             </div>
 
