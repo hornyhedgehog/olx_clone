@@ -2,10 +2,11 @@
     margin-right: 15px;
     max-width: 312px;
     width: 312px;
-    /*height: 424px;*/
-    height: 424px;
+    height: fit-content;
     display: inline-block;
     cursor: pointer;
+    background-color: inherit;
+    border-color : transparent ;
 }
 
 .card .image-container {
@@ -14,9 +15,10 @@
 }
 
 .card-container {
+    top: 1em;
     position: relative;
     width: 312px;
-    height: 424px;
+    height: fit-content;
 }
 
 .card .image-container .favorite img:hover {
@@ -45,6 +47,7 @@
     max-height: 100%;
     text-align: center;
     border-radius: 2px;
+    background-color: inherit;
 }
 
 .card .content {

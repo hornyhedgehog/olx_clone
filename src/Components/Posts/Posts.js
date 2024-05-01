@@ -62,8 +62,13 @@ function Posts() {
     return (
         <div>
             {posts && !loading && (
-                <div>
-                    <div className="posts-list"> {quickMenuCards}</div>
+                <div id='allModelsContainer'>
+                    <div id='heading'>
+                        ALL MODELS
+                    </div>
+                    <div>
+                        <div className="posts-list"> {quickMenuCards}</div>
+                    </div>
                 </div>
             )}
             {loading && (
@@ -71,4 +76,5 @@ function Posts() {
             )}
         </div>);
 }
+
 export default Posts;

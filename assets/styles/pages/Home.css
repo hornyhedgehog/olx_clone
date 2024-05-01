@@ -4,4 +4,5 @@
     justify-content: space-between; /* Distribute items with even space */
     align-items: start; /* Align items vertically in the center */
     height: fit-content;
+    width: 100%;
 }

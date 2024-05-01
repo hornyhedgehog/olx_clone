@@ -1,6 +1,6 @@
 .featuredContainer {
     background-color: lightgrey;
-    width: 100vw;
+    width: auto;
     padding: 10px 20px 10px 50px;
     height: 60vh;
 }
@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: row;
     height: auto;
+    width: auto;
 }
 
 .featuredCardContainer > div {
