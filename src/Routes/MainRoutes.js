@@ -8,6 +8,7 @@ import ViewPost from '../Pages/ViewPost'
 import ViewMore from '../Pages/ViewMore'
 import AccountPage from "../Pages/MyAccount";
 import Favourites from "../Pages/Favourites";
+import SearchResults from "../Pages/SearchResults";
 
 
 
@@ -39,6 +40,7 @@ function MainRoutes() {
            <Route path="/viewmore">
                <ViewMore/>
            </Route>
+           <Route path="/results/:filter" component={SearchResults}/>
 
        </Router>
     )

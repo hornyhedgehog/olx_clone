@@ -7,15 +7,14 @@ import Logo from "../../assets/Logo";
 import {AuthContext} from "../../contextStore/AuthContext";
 import {Firebase} from "../../firebase/config";
 
-function Header() {
+function Header(props) {
     const {allPost} = useContext(AllPostContext)
     const {setPostContent} = useContext(PostContext)
     const history = useHistory();
     const [filteredData, setFilteredData] = useState([]);
-    const [wordEntered, setWordEntered] = useState("");
+    const [wordEntered, setWordEntered] = useState(props?.value || "");
     const handleFilter = (event) => {
         const searchWord = event.target.value;
-        setWordEntered(searchWord);
         const newFilter = allPost.filter((value) => {
             return value.name.toLowerCase().includes(searchWord.toLowerCase());
         });
@@ -24,6 +23,7 @@ function Header() {
             setFilteredData([]);
         } else {
             setFilteredData(newFilter);
+            history.push("/results/" + wordEntered)
         }
     };
     const clearInput = () => {
@@ -69,7 +69,7 @@ function Header() {
                         <input type="text"
                                placeholder="Search specific product..."
                                value={wordEntered}
-                               onChange={handleFilter}/>
+                               onChange={(text)=> (setWordEntered(text.target.value))}/>
                     </div>
                     <input className="searchButton" type="button"
                            value="SEARCH" onClick={handleFilter}/>

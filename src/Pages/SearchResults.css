@@ -1,0 +1,22 @@
+#loginHeader {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+#loginHeader:hover {
+    cursor: pointer;
+    color: lightblue;
+}
+
+#cardContainer {
+    display: grid;
+    grid-template-columns: 5fr 5fr 5fr 5fr;
+    grid-template-rows: 5fr 5fr 5fr 5fr;
+}
