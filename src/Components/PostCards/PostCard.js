@@ -7,7 +7,7 @@ import Trash from "../../assets/Trash";
 import {Firebase} from "../../firebase/config";
 import {AuthContext} from "../../contextStore/AuthContext";
 
-function PostCard({product, index}) {
+function PostCard({product, index, isFavourite=false}) {
     let {setPostContent} = useContext(PostContext)//at the time of onClick on post ,the specified post item assigned to postContent by setPostContent function and it will be stored in a global context PostContext
     let productInfo = product;
     const history = useHistory()//at the time of onClick on post , we want redirect to the view post page
@@ -15,29 +15,24 @@ function PostCard({product, index}) {
 
     const {user} = useContext(AuthContext);
 
-    function handleFavouriteClick() {
+    function handleFavouriteClick(event, user) {
         setPostContent(product)
 
-        if (!!user || !!product) {
+        if (!!user && !!product) {
             Firebase.firestore()
                 .collection("user_favourites")
                 .add({
-                    userID: user.uid, productID: product.id, addedAt: new Date().toDateString()
+                    userID: user.uid,
+                    favouritedAt: new Date().toDateString(),
+                    productID: product?.id,
+                    name: product?.name,
+                    category: product?.category,
+                    price: product?.price,
+                    description: product?.description,
+                    url: product?.url,
+                    userId: product?.userId,
+                    createdAt: product?.createdAt
                 })
-            console.log(product);
-        }
-    }
-
-    function handleFavouriteClick() {
-        setPostContent(product)
-
-        if (!!user || !!product) {
-            Firebase.firestore()
-                .collection("user_favourites")
-                .add({
-                    userID: user.uid, productID: product.id, addedAt: new Date().toDateString()
-                })
-            console.log(product);
         }
     }
 
@@ -61,9 +56,10 @@ function PostCard({product, index}) {
                 </div>
             </div>
             <div className="card-overlay">
-                <div className="favorite">
-                    <Heart handleClick={handleFavouriteClick}/>
-                </div>
+                {!isFavourite && <div className="favorite">
+                    <Heart handleClick={(event) => (handleFavouriteClick(event, user))}/>
+                </div>}
+
             </div>
 
         </div>

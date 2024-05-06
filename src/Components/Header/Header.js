@@ -4,14 +4,8 @@ import {AllPostContext} from "../../contextStore/AllPostContext";
 import {PostContext} from "../../contextStore/PostContext";
 import "./Header.css";
 import Logo from "../../assets/Logo";
-import SearchIcon from "../../assets/SearchIcon"
-import Arrow from "../../assets/Arrow";
-import SellButton from "../../assets/SellButton";
-import SellButtonPlus from "../../assets/SellButtonPlus";
-import {Link} from "react-router-dom";
 import {AuthContext} from "../../contextStore/AuthContext";
 import {Firebase} from "../../firebase/config";
-import Search from "../Search/Search";
 
 function Header() {
     const {allPost} = useContext(AllPostContext)
@@ -56,6 +50,9 @@ function Header() {
     return (
         <div className="headerParentDiv">
             <div className='headerTopBar'>
+                <div className="homeLink" onClick={() => history.push("/")}>
+                    Home
+                </div>
                 <div className="favouritesLink" onClick={() => history.push("/favourites")}>
                     Favourites
                 </div>
@@ -75,7 +72,7 @@ function Header() {
                                onChange={handleFilter}/>
                     </div>
                     <input className="searchButton" type="button"
-                           value="search" onClick={handleFilter}/>
+                           value="SEARCH" onClick={handleFilter}/>
                 </div>
             </div>
         </div>

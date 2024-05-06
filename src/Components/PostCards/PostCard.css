@@ -40,6 +40,11 @@
     z-index: 1;
 }
 
+.card .image-container .image:hover {
+    border-radius: 1px;
+    border: 2px solid seagreen;
+}
+
 .card .image img {
     max-width: 100%;
     width: 312px;

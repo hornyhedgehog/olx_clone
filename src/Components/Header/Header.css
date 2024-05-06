@@ -12,6 +12,13 @@
 
 .headerTopBar > div {
     padding: 10px;
+    cursor: pointer;
+}
+
+.headerTopBar > div:hover {
+    color: darkslateblue;
+    background-color: lightgrey;
+    border-radius: 15px;
 }
 
 .searchContainer {
