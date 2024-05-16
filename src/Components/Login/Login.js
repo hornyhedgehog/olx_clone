@@ -23,7 +23,7 @@ function Login() {
   };
   return (<>
     {loading && <RoundLoading/> }
-    <div>
+    <div id="background">
       <div className="loginParentDiv">
         <div>
           <div id="loginLogoText">
