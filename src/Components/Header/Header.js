@@ -13,6 +13,7 @@ function Header(props) {
     const history = useHistory();
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState(props?.value || "");
+    const showSearch = props?.showSearch || true
     const handleFilter = (event) => {
         const searchWord = event.target.value;
         const newFilter = allPost.filter((value) => {
@@ -60,7 +61,7 @@ function Header(props) {
                     Account
                 </div>
             </div>
-            <div className="searchContainer">
+            {showSearch && (<div className="searchContainer">
                 <div className="logo" onClick={() => history.push("/")}>
                     <Logo/>
                 </div>
@@ -69,12 +70,13 @@ function Header(props) {
                         <input type="text"
                                placeholder="Search specific product..."
                                value={wordEntered}
-                               onChange={(text)=> (setWordEntered(text.target.value))}/>
+                               onChange={(text) => (setWordEntered(text.target.value))}/>
                     </div>
                     <input className="searchButton" type="button"
                            value="SEARCH" onClick={handleFilter}/>
                 </div>
-            </div>
+            </div>)}
+
         </div>
 
     );

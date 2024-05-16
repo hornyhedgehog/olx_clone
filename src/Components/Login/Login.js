@@ -25,35 +25,41 @@ function Login() {
     {loading && <RoundLoading/> }
     <div>
       <div className="loginParentDiv">
-        <img width="200px" height="200px" src={Logo} alt=""></img>
+        <div>
+          <div id="loginLogoText">
+            PRINTING HOUSE
+          </div>
+        </div>
+
         <form onSubmit={handleSubmit}>
-          <label>Email</label>
           <br />
           <input
             className="input"
             type="email"
-            placeholder="oleh@test.com"
+            placeholder="Електронна пошта"
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <br />
-          <label>Password</label>
-          <br />
           <input
             className="input"
             type="password"
             name="password"
-            placeholder="123123"
+            placeholder="Пароль"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
-          <br />
-          <button>Login</button>
+          <br/>
+          <button>Увійти</button>
         </form>
-        <Link to="/signup">Signup</Link>
-      </div> 
+        <br/>
+        <div id="loginSignUp">
+          <Link to="/signup">Зареєструватись</Link>
+        </div>
+
+      </div>
     </div>
     </>
   );
