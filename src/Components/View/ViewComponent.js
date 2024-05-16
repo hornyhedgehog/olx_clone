@@ -4,6 +4,7 @@ import {Firebase} from "../../firebase/config";
 import {useHistory} from "react-router";
 import "./ViewComponent.css";
 import {DetailsCarousel} from "../Carousel/DetailsCarousel";
+import ModelViewer from "../ModelViewer/ModelViewer";
 
 function ViewComponent() {
     let {postContent} = useContext(PostContext);//from the global store PostContext we can get information about desired product post that we want to show (the user is clicked item on the card)
@@ -26,6 +27,7 @@ function ViewComponent() {
                 });
         }
     }, [history, postContent]);
+
     return (
         <React.Fragment>
             <div className="viewParentHorizontalDiv">
@@ -61,10 +63,8 @@ function ViewComponent() {
                             <img src={postContent.url}/>
                         </div>
                         <div>
-                            <img src={postContent.url}/>
+                            <ModelViewer src={postContent.modelUrl}/>
                         </div>
-
-
                     </DetailsCarousel>
                 </div>
                 {" "}
@@ -74,12 +74,12 @@ function ViewComponent() {
                         <p>{postContent.category}</p>
                         <p className={'productPrice'}>{postContent.price} </p>
                         <p className={'shortDescription'}>{postContent?.shortDescription || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}</p>
-                        <button className="preview-button">Preview model</button>
+                        <button className="preview-button" onClick>Preview model</button>
                         <button className="download-button">Download model</button>
                         <p>Created {postContent.createdAt}</p>
                     </div>
 
-                </div>
+                </div>s
 
             </div>
             <div className="bottomVerticalSection">
