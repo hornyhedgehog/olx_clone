@@ -33,55 +33,58 @@ export default function Signup() {
   };
   return (<>
     {loading && <SignUpLoading/> } <div>
-      <div className="signupParentDiv">
-        <img width="200px" height="200px" src={Logo} alt=""></img>
-        <form onSubmit={handleSubmit}>
-          <label>Full Name</label>
-          <br />
-          <input
-            className="input"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            name="name"
-          />
-          <br />
-          <label>Email</label>
-          <br />
-          <input
-            className="input"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            name="email"
-          />
-          <br />
-          <label>Phone</label>
-          <br />
-          <input
-            className="input"
-            type="number"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            name="phone"
-          />
-          <br />
-          <label>Password</label>
-          <br />
-          <input
-            className="input"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            name="password"
-          />
-          <br />
-          <br />
-          <button>Signup</button>
-        </form>
-        <Link to="/login">Login</Link>
+        <div className="signupParentDiv">
+          <div>
+            <div id="signupLogoText">
+              PRINTING HOUSE
+            </div>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <br/>
+            <input
+                className="input"
+                type="text"
+                placeholder="Ім'я"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                name="name"
+            />
+            <br/>
+            <input
+                className="input"
+                type="email"
+                placeholder="Електронна пошта"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+            />
+            <br/>
+            <input
+                className="input"
+                type="number"
+                placeholder="Номер телефону"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                name="phone"
+            />
+            <br/>
+            <input
+                className="input"
+                type="password"
+                placeholder="Пароль"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                name="password"
+            />
+            <br/>
+            <br/>
+            <button>Зареєструватись</button>
+          </form>
+          <br/>
+          <div id="loginSignUp">
+            <Link to="/login">Увійти</Link>          </div>
+        </div>
       </div>
-    </div> 
-    </>
+      </>
   );
 }

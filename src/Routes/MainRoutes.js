@@ -6,6 +6,9 @@ import Login from '../Pages/Login'
 import CreatePost from '../Pages/CreatePost'
 import ViewPost from '../Pages/ViewPost'
 import ViewMore from '../Pages/ViewMore'
+import AccountPage from "../Pages/MyAccount";
+import Favourites from "../Pages/Favourites";
+import SearchResults from "../Pages/SearchResults";
 
 
 
@@ -15,6 +18,12 @@ function MainRoutes() {
        <Router>
            <Route exact path="/">
                <Home/>
+           </Route>
+           <Route path="/account">
+                <AccountPage/>
+           </Route>
+           <Route path="/favourites">
+                <Favourites/>
            </Route>
            <Route path="/signup">
                <Signup/>
@@ -31,10 +40,8 @@ function MainRoutes() {
            <Route path="/viewmore">
                <ViewMore/>
            </Route>
-         
-           
+           <Route path="/results/:filter" component={SearchResults}/>
 
-           
        </Router>
     )
 }

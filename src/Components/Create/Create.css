@@ -18,7 +18,7 @@
     background-color: transparent;
 }
 
-input:not(:valid) {
+.input:not(:valid) {
     background-color: lightsalmon;
 }
 

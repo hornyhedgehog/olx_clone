@@ -12,7 +12,7 @@ export default function Heart({handleClick}) {
         <img id="heart" ref={heartRef}
              src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"
              onClick={handleClick}
-             onMouseEnter={handleFocus} style={{width: '25px', height: '25px'}}
-             onMouseOut={handleFocus} style={{width: '25px', height: '25px'}}/>
+             onMouseEnter={handleFocus} style={{width: '50px', height: '50px'}}
+             onMouseOut={handleFocus} style={{width: '50px', height: '50px'}}/>
     )
 }

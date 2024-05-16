@@ -1,36 +1,71 @@
+body {
+    background-image: url("https://damassets.autodesk.net/content/dam/autodesk/draftr/19187/3dp.jpg");
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-size: cover;
+}
+
+.loginParentDiv #loginLogoText{
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px !important;
+    font-size: 70px;
+    font-weight: 520;
+    line-height: 1.1;
+    color: #9ab7ce;
+}
+
 .loginParentDiv {
-    border: 1px solid black;
-    width: max-content;
-    padding: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    width: 40%;
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+    float: right;
+    position: relative;
+    padding: 155px;
+    text-align: center;
   }
   
   .loginParentDiv .input {
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    outline-color: transparent;
-    
-  }
-  
-  .loginParentDiv button {
-    width: 100%;
+    position: relative;
+    border-collapse: separate;
+    width: 80%;
     height: 48px;
-    /* border-color: transparent; */
-    background-color: #002f34;
-    color: whitesmoke;
+    font-size: 14px;
+    border-radius: 5px !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ccc;
+  }
+
+  .loginParentDiv button {
+    width: 80%;
+    height: 48px;
+    background: #002f34;
+    color: #fff;
     font-weight: 900;
+    border:none;
+    border-radius:5px;
   }
   .loginParentDiv button:hover {
     background-color: white;
     color: #002f34;
     border: 2px solid #002f34;
   }
-  
+
+  .loginParentDiv #loginSignUp a:link{
+      font-weight: bold;
+      color: #9ab7ce;
+  }
+
+.loginParentDiv #loginSignUp a:visited{
+    color: #9ab7ce;
+}
+
   .loginParentDiv a {
     display: flex;
     justify-content: center;

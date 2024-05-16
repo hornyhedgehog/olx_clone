@@ -1,0 +1,30 @@
+#pageContainer {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 120px 120px 120px;
+    grid-template-areas:
+    "....... ....... ......."
+    "sidebar content content";
+    background-color: #fff;
+    color: #444;
+}
+
+#left-panel {
+    background-color: seagreen;
+    grid-area: sidebar;
+    height: 100%;
+}
+
+#avatar {
+
+}
+
+#right-panel {
+    grid-area: content;
+    background-color: lightgray;
+    height: 100%;
+}
+
+#avatar-image {
+
+}

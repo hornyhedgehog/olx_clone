@@ -1,0 +1,24 @@
+.featuredContainer {
+    background-color: lightgrey;
+    width: auto;
+    padding: 10px 20px 10px 50px;
+    height: 60vh;
+}
+
+.featuredText {
+    font-size: 36px;
+    font-weight: bold;
+    color: #227F76;
+}
+
+.featuredCardContainer {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+}
+
+.featuredCardContainer > div {
+    margin-right: 2em;
+}
+
