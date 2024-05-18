@@ -9,8 +9,7 @@ import ViewMore from '../Pages/ViewMore'
 import AccountPage from "../Pages/MyAccount";
 import Favourites from "../Pages/Favourites";
 import SearchResults from "../Pages/SearchResults";
-
-
+import ModelViewer from "../Components/ModelViewer/ModelViewer";
 
 
 function MainRoutes() {
@@ -41,6 +40,7 @@ function MainRoutes() {
                <ViewMore/>
            </Route>
            <Route path="/results/:filter" component={SearchResults}/>
+           <Route path="/testModel" component={ModelViewer}/>
 
        </Router>
     )
