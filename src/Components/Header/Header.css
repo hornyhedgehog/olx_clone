@@ -5,6 +5,13 @@
     height: 55vh;
 }
 
+.headerParentDivWithoutSearch {
+    background-color: whitesmoke;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+}
+
 .headerTopBar {
     display: flex;
     justify-content: flex-end;
@@ -13,6 +20,8 @@
 .headerTopBar > div {
     padding: 10px;
     cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .headerTopBar > div:hover {
@@ -249,4 +258,23 @@
 .dataResult-header :hover {
     background-color: #ebeeef;
 }
- 
+
+
+#createPostLink {
+    border: #227F76 solid 1px;
+    border-radius: 10px;
+    background-color:#227F76;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+#createPostLink:hover {
+    border: #227F76 solid 1px;
+    border-radius: 10px;
+    background-color: white;
+    color: #227F76;
+    font-weight: bold;
+    cursor: pointer;
+}
