@@ -8,12 +8,11 @@ const CreatePage = () => {
 
     return (
         <Fragment>
-            <Create/>
-            {/*{user ? (*/}
-            {/*    <Create/>*/}
-            {/*) : (*/}
-            {/*    <Login/>*/}
-            {/*)}*/}
+            {user ? (
+                <Create/>
+            ) : (
+                <Login/>
+            )}
         </Fragment>
     );
 };

@@ -21,7 +21,7 @@ function Favourites(props) {
 
     const fetchPosts = async () => {
         if (!!user) {
-            let favouritePostsRaw = await Firebase.firestore().collection("user_favourites").where("userID", "==", user.uid).get()
+            let favouritePostsRaw = await Firebase.firestore().collection("user_favourites").where("userId", "==", user.uid).get()
             favouritePostsRaw = favouritePostsRaw.docs
             favouritePostsRaw.map((data, index) => {
                 const product = data.data()

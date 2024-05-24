@@ -2,6 +2,7 @@
     position: absolute;
     top: 15%;
     left: 5%;
+    padding-bottom: 3%;
 }
 
 .metadataBlock {
@@ -52,6 +53,6 @@
 #imagesBlock {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     grid-gap: 1em;
 }

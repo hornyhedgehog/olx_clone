@@ -35,35 +35,11 @@ function ViewComponent() {
                     <DetailsCarousel
                         showStatus={false}
                         showArrows={true}>
+                        {postContent.images.map((image, i) => (<div key={i}>
+                            <img src={image} key={i + '_image'}/>
+                        </div>))}
                         <div>
-                            <img src={postContent.url}/>
-                        </div>
-                        <div>
-                            <img src={postContent.url}/>
-                        </div>
-                        <div>
-                            <img src={postContent.url}/>
-                        </div>
-                        <div>
-                            <img src={postContent.url}/>
-                        </div>
-                        <div>
-                            <img src={postContent.url}/>
-                        </div>
-                        <div>
-                            <img src={postContent.url}/>
-                        </div>
-                        <div>
-                            <img src={postContent.url}/>
-                        </div>
-                        <div>
-                            <img src={postContent.url}/>
-                        </div>
-                        <div>
-                            <img src={postContent.url}/>
-                        </div>
-                        <div>
-                            <ModelViewer src={postContent.modelUrl}/>
+                            <ModelViewer src={postContent.model}/>
                         </div>
                     </DetailsCarousel>
                 </div>
@@ -71,10 +47,9 @@ function ViewComponent() {
                 <div className="rightSection">
                     <div className="productDetails">
                         <span>{postContent.name}</span>
-                        <p>{postContent.category}</p>
+                        <p>{postContent.genres}</p>
                         <p className={'productPrice'}>{postContent.price} </p>
-                        <p className={'shortDescription'}>{postContent?.shortDescription || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}</p>
-                        <button className="preview-button" onClick>Preview model</button>
+                        <button className="preview-button">Preview model</button>
                         <button className="download-button">Download model</button>
                         <p>Created {postContent.createdAt}</p>
                     </div>
@@ -91,11 +66,11 @@ function ViewComponent() {
 
                         </div>
 
-                    {userDetails &&
+                    {!!userDetails &&
                         <div className="contactDetails">
                             <p className="p-bold">Customer details</p>
-                            <p>Name : {userDetails.name}</p>
-                            <p>Phone : {userDetails.phone}</p>
+                            <p>Name : {userDetails?.name}</p>
+                            <p>Phone : {userDetails?.phone}</p>
                         </div>
                     }
                 </div>

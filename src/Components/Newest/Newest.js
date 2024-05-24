@@ -39,8 +39,8 @@ function NewestModels() {
 
         const randomItems = [];
         if (!arr.length) return randomItems;
-        const items = [...arr];
-        for (let i = 0; i < numItems; i++) {
+        const items = JSON.parse(JSON.stringify(arr));
+        for (let i = 0; i < numItems && i< arr.length; i++) {
             // Generate a random index within the array bounds
             const randomIndex = Math.floor(Math.random() * arr.length);
             // Push the item at the random index to the new array
