@@ -5,6 +5,7 @@ import {AuthContext} from '../contextStore/AuthContext';
 import './Account.css'
 import Header from "../Components/Header/Header";
 import CustomInput from "../Components/CustomInput/CustomInput";
+import PostCard from "../Components/PostCards/PostCard";
 
 function Account(props) {
     const {setUser, user} = useContext(AuthContext)
@@ -99,19 +100,45 @@ function Profile({user}) {
             Profile
         </div>
         <div id='inputs'>
-            <CustomInput inputName='Name' value={user?.name} />
-            <CustomInput inputName='Username' value={ !!user ? ('@' + user?.email?.split('@')?.[0]) : '@vkusiak'} />
-            <CustomInput inputName='Email' value={user?.email} />
+            <CustomInput inputName='Name' value={user?.name}/>
+            <CustomInput inputName='Username' value={!!user ? ('@' + user?.email?.split('@')?.[0]) : '@vkusiak'}/>
+            <CustomInput inputName='Email' value={user?.email}/>
             <CustomInput inputName='Phone' value={user?.phone} placeholder='+3801231231'/>
             <CustomInput inputName='Country' placeholder='Україна'/>
-            <CustomInput inputName='City'  placeholder='Львів'/>
-            <CustomInput inputName='Address'  placeholder='Червона площа будинок 14 квартира 88'/>
+            <CustomInput inputName='City' placeholder='Львів'/>
+            <CustomInput inputName='Address' placeholder='Червона площа будинок 14 квартира 88'/>
         </div>
     </React.Fragment>)
 }
 
-function MyModels(props) {
-    return null;
+function MyModels({user}) {
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        fetchMyPosts()
+    }, [setPosts])
+
+    const fetchMyPosts = async () => {
+        const myPosts = []
+        if (!!user) {
+            let myPostsRaw = await Firebase.firestore().collection("products").where("userId", "==", user.id).get()
+            myPostsRaw = myPostsRaw.docs
+            myPostsRaw.map((data, index) => {
+                myPosts.push(data.data())
+            })
+            setPosts(myPosts);
+        }
+    }
+
+    return (<React.Fragment>
+        <div id="container-mypost">
+            {!!posts.length &&
+            posts.map((post, index) => (
+                <PostCard class="featuredCard" product={post} index={index} key={index}/>
+            ))}
+        </div>
+    </React.Fragment>)
 }
 
 function Settings(props) {
