@@ -1,0 +1,18 @@
+.CustomInput {
+  display: flex;
+  flex-direction: column;
+}
+
+#title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #227F76;
+  margin-bottom: 10px;
+}
+
+#input {
+  height: 40px;
+  width: 50%;
+  border: transparent 2px;
+  border-radius: 5px;
+}

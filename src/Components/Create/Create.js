@@ -23,7 +23,6 @@ const Create = () => {
     const [uploadedModelData, setUploadedModelData] = useState('');
     const [error, setError] = useState(null);
     const [uploadedImagesForDisplay, setImagesToDisplay] = useState([]);
-    const [imagesToDisplayWithPlaceholders, setImagesToDisplayWithPlaceholders] = useState([]);
 
     const imagePlaceholder = "https://img.freepik.com/premium-vector/camera-icon-isolated-white-background-vector-illustration_230920-1820.jpg?w=150&h=150";
 

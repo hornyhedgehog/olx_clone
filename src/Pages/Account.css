@@ -1,30 +1,83 @@
 #pageContainer {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 120px 120px 120px;
-    grid-template-areas:
-    "....... ....... ......."
-    "sidebar content content";
+    display: flex;
+    flex-direction: row;
     background-color: #fff;
     color: #444;
-}
-
-#left-panel {
-    background-color: seagreen;
-    grid-area: sidebar;
+    width: 100%;
     height: 100%;
 }
 
-#avatar {
+#left-panel {
+    background-color: #227F76;
+    grid-area: sidebar;
+    height: 94vh;
+    width: 16vw;
+}
 
+#avatar-image {
+    border: transparent 1px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
 
 #right-panel {
     grid-area: content;
     background-color: lightgray;
-    height: 100%;
+    height: 94vh;
+    width: 84vw;
 }
 
 #avatar-image {
 
+}
+
+#userName {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: fangsong;
+    color: whitesmoke;
+}
+
+#nickname {
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+#avatarAndName {
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+}
+
+#link-list {
+    padding-top: 5vh;
+    color: whitesmoke;
+    font-family: fangsong;
+    font-weight: bold;
+    font-size: 27px;
+}
+
+ul {
+    margin-left: -40px;
+}
+
+li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    list-style-type: none;
+}
+
+li:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+#inputs {
+    margin: 50px 0 0 50px;
 }

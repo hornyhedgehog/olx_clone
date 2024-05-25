@@ -54,9 +54,11 @@
     position: absolute;
     height: 10vh;
     width: 100%;
-    bottom: 0;
+    bottom: 10em;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .searchButton {
@@ -277,4 +279,27 @@
     color: #227F76;
     font-weight: bold;
     cursor: pointer;
+}
+
+#motivation{
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 50px;
+    border: 2px #227F76;
+    border-radius: 5px;
+}
+
+#motivation > p {
+    font-weight: bold;
+    font-size: 80px;
+    color: white;
+    text-shadow: #227F76 10px 0 10px;
+}
+
+#searchInputContainer {
+    display: flex;
+    justify-content: center;
 }

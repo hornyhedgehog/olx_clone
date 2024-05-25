@@ -68,14 +68,20 @@ function Header({value = "", showSearch = true}) {
                     <Logo/>
                 </div>
                 <div className="searchBlock">
-                    <div className="placeSearch">
-                        <input type="text"
-                               placeholder="Search specific product..."
-                               value={wordEntered}
-                               onChange={(text) => (setWordEntered(text.target.value))}/>
+                    <div id='motivation'>
+                        <p>Створюй, поширюй, досліджуй</p>
                     </div>
-                    <input className="searchButton" type="button"
-                           value="SEARCH" onClick={handleFilter}/>
+                    <div id='searchInputContainer'>
+                        <div className="placeSearch">
+                            <input type="text"
+                                   placeholder="Search specific product..."
+                                   value={wordEntered}
+                                   onChange={(text) => (setWordEntered(text.target.value))}/>
+                        </div>
+                        <input className="searchButton" type="button"
+                               value="SEARCH" onClick={handleFilter}/>
+                    </div>
+
                 </div>
             </div>)}
 
