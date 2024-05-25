@@ -7,13 +7,12 @@ import Logo from "../../assets/Logo";
 import {AuthContext} from "../../contextStore/AuthContext";
 import {Firebase} from "../../firebase/config";
 
-function Header(props) {
+function Header({value = "", showSearch = true}) {
     const {allPost} = useContext(AllPostContext)
     const {setPostContent} = useContext(PostContext)
     const history = useHistory();
     const [filteredData, setFilteredData] = useState([]);
-    const [wordEntered, setWordEntered] = useState(props?.value || "");
-    const showSearch = props?.showSearch || true
+    const [wordEntered, setWordEntered] = useState(value || "");
     const handleFilter = (event) => {
         const searchWord = event.target.value;
         const newFilter = allPost.filter((value) => {
@@ -49,8 +48,11 @@ function Header(props) {
             });
     };
     return (
-        <div className="headerParentDiv">
+        <div className={showSearch ? "headerParentDiv" : "headerParentDivWithoutSearch"}>
             <div className='headerTopBar'>
+                <div id="createPostLink" onClick={() => history.push("/createPost")}>
+                    CREATE NEW POST
+                </div>
                 <div className="homeLink" onClick={() => history.push("/")}>
                     Home
                 </div>

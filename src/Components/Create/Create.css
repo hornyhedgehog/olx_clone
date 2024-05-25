@@ -1,25 +1,32 @@
-.centerDiv {
-    border: 1px solid black;
+#centerDiv {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    padding-bottom: 3%;
+}
+
+.metadataBlock {
+    border: 1px solid lightgrey;
     width: max-content;
     padding: 50px;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 6px;
+    background-color: white;
+    margin-bottom: 1em;
 }
 
-.input {
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    outline-color: transparent;
-    margin-bottom: 35px;
-    background-color: transparent;
+.inputs {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    background-color: lightgrey;
+    color: black;
+    font-size: 20px;
+    width: 40vw;
+    height: 5vh;
 }
 
-.input:not(:valid) {
-    background-color: lightsalmon;
+.inputs:not(:valid) {
+    border-radius: 10px;
+    border-bottom-color: red;
 }
 
 .uploadBtn {
@@ -39,5 +46,13 @@
 }
 
 .centerDiv label {
-    font-weight: bold;
+    padding-top: 25px;
+    font-size: 18px;
+}
+
+#imagesBlock {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 1em;
 }

@@ -22,15 +22,15 @@ function PostCard({product, index, isFavourite=false}) {
             Firebase.firestore()
                 .collection("user_favourites")
                 .add({
-                    userID: user.uid,
+                    userId: user.uid,
                     favouritedAt: new Date().toDateString(),
                     productID: product?.id,
                     name: product?.name,
-                    category: product?.category,
                     price: product?.price,
                     description: product?.description,
-                    url: product?.url,
-                    userId: product?.userId,
+                    images: product?.images,
+                    model: product?.model,
+                    creatorID: product?.userId,
                     createdAt: product?.createdAt
                 })
         }
@@ -43,7 +43,7 @@ function PostCard({product, index, isFavourite=false}) {
             }}>
                 <div className='image-container'>
                     <div className="image">
-                        <img src={product.url ? product.url : imagePlaceholder} alt="" onError={(event)=> (event.target.src = imagePlaceholder)} />
+                        <img src={!!product.images.length ? product.images[0] : imagePlaceholder} alt="" onError={(event)=> (event.target.src = imagePlaceholder)} />
                     </div>
                 </div>
                 <div className="content">

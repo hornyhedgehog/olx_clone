@@ -30,7 +30,7 @@ function MainRoutes() {
            <Route path="/login">
                <Login/>
            </Route>
-           <Route path="/create">
+           <Route path="/createPost">
                <CreatePost/>
            </Route>
            <Route path="/view">
