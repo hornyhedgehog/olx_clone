@@ -63,7 +63,7 @@ function Account(props) {
                     <div id="avatarAndName">
                         <div id="avatar">
                             <img id="avatar-image"
-                                 src="https://musicart.xboxlive.com/7/4d4d6500-0000-0000-0000-000000000002/504/image.jpg?w=300&h=300"
+                                 src="https://st3.depositphotos.com/9998432/13335/v/450/depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.jpg"
                                  alt='avatarka'/>
                         </div>
                         <div id='userName'>
