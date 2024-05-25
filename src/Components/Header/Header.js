@@ -49,24 +49,26 @@ function Header({value = "", showSearch = true}) {
     };
     return (
         <div className={showSearch ? "headerParentDiv" : "headerParentDivWithoutSearch"}>
-            <div className='headerTopBar'>
-                <div id="createPostLink" onClick={() => history.push("/createPost")}>
-                    CREATE NEW POST
-                </div>
-                <div className="homeLink" onClick={() => history.push("/")}>
-                    Home
-                </div>
-                <div className="favouritesLink" onClick={() => history.push("/favourites")}>
-                    Favourites
-                </div>
-                <div className="accountLink" onClick={() => history.push("/account")}>
-                    Account
-                </div>
-            </div>
-            {showSearch && (<div className="searchContainer">
+            <div className="headerTopBar">
                 <div className="logo" onClick={() => history.push("/")}>
                     <Logo/>
                 </div>
+                <div className='headerTopBarLinks'>
+                    <div id="createPostLink" onClick={() => history.push("/createPost")}>
+                        CREATE NEW POST
+                    </div>
+                    <div className="homeLink" onClick={() => history.push("/")}>
+                        Home
+                    </div>
+                    <div className="favouritesLink" onClick={() => history.push("/favourites")}>
+                        Favourites
+                    </div>
+                    <div className="accountLink" onClick={() => history.push("/account")}>
+                        Account
+                    </div>
+                </div>
+            </div>
+            {showSearch && (<div className="searchContainer">
                 <div className="searchBlock">
                     <div id='motivation'>
                         <p>Створюй, поширюй, досліджуй</p>
