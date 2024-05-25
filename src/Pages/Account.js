@@ -6,11 +6,9 @@ import './Account.css'
 import Header from "../Components/Header/Header";
 import CustomInput from "../Components/CustomInput/CustomInput";
 
-
-
-
 function Account(props) {
     const {setUser, user} = useContext(AuthContext)
+    const [userDetails, setUserDetails] = useState({});
 
     const [rightPanel, setRightPanel] = useState(<div/>);
     useEffect(() => {
@@ -19,24 +17,37 @@ function Account(props) {
             setUser(user)
         })
 
-        setRightPanel(<Profile user={user}/>)
-
     }, [setUser])
+
+    useEffect(() => {
+
+        Firebase.firestore()
+            .collection("users")
+            .where("id", "==", user.uid)
+            .get()
+            .then((res) => {
+                res.forEach((doc) => {
+                    setUserDetails(doc.data());
+                    setRightPanel(<Profile user={doc.data()}/>)
+                });
+            });
+
+    }, [user])
 
     function handleItemSelected(tabName) {
         let componentToRender;
         switch (tabName) {
             case 'profile':
-                componentToRender = <Profile user={user}/>
+                componentToRender = <Profile user={userDetails}/>
                 break;
             case 'models':
-                componentToRender = <MyModels user={user}/>
+                componentToRender = <MyModels user={userDetails}/>
                 break;
             case 'settings':
-                componentToRender = <Settings user={user}/>
+                componentToRender = <Settings user={userDetails}/>
                 break;
             case 'sign_out':
-                componentToRender = <SignOut user={user}/>
+                componentToRender = <SignOut user={userDetails}/>
         }
 
         setRightPanel(componentToRender)
@@ -82,16 +93,16 @@ function Account(props) {
         ;
 }
 
-function Profile(user) {
+function Profile({user}) {
     return (<React.Fragment>
         <div id='profileTitle'>
             Profile
         </div>
         <div id='inputs'>
-            <CustomInput inputName='Name' value={user.name} />
+            <CustomInput inputName='Name' value={user?.name} />
             <CustomInput inputName='Username' value={ !!user ? ('@' + user?.email?.split('@')?.[0]) : '@vkusiak'} />
-            <CustomInput inputName='Email' value={user.email} />
-            <CustomInput inputName='Phone' value={user.name} placeholder='+3801231231'/>
+            <CustomInput inputName='Email' value={user?.email} />
+            <CustomInput inputName='Phone' value={user?.phone} placeholder='+3801231231'/>
             <CustomInput inputName='Country' placeholder='Україна'/>
             <CustomInput inputName='City'  placeholder='Львів'/>
             <CustomInput inputName='Address'  placeholder='Червона площа будинок 14 квартира 88'/>

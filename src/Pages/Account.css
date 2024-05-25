@@ -79,5 +79,12 @@ li:hover {
 }
 
 #inputs {
-    margin: 50px 0 0 50px;
+    margin: 20px 0 0 50px;
+}
+
+#profileTitle {
+    margin-top: 5vh;
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: 30px;
 }
