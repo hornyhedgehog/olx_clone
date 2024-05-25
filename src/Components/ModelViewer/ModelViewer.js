@@ -26,7 +26,7 @@ function ModelViewer({src}) {
                 </Box>
             </Flex>
             <div id='volumeText'>
-                {`Volume: ${volume} cm^3`}
+                {`Volume: ${volume.toFixed(1)} cm^3`}
             </div>
         </div>
     )

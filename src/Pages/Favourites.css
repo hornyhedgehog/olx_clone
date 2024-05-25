@@ -16,6 +16,7 @@
 }
 
 #cardContainer {
+    padding-left: 2vw;
     display: grid;
     grid-template-columns: 5fr 5fr 5fr 5fr;
     grid-template-rows: 5fr 5fr 5fr 5fr;
