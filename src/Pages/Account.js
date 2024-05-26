@@ -5,12 +5,11 @@ import {AuthContext} from '../contextStore/AuthContext';
 import './Account.css'
 import Header from "../Components/Header/Header";
 import CustomInput from "../Components/CustomInput/CustomInput";
-
-
-
+import PostCard from "../Components/PostCards/PostCard";
 
 function Account(props) {
     const {setUser, user} = useContext(AuthContext)
+    const [userDetails, setUserDetails] = useState({});
 
     const [rightPanel, setRightPanel] = useState(<div/>);
     useEffect(() => {
@@ -19,24 +18,37 @@ function Account(props) {
             setUser(user)
         })
 
-        setRightPanel(<Profile user={user}/>)
-
     }, [setUser])
+
+    useEffect(() => {
+
+        Firebase.firestore()
+            .collection("users")
+            .where("id", "==", user.uid)
+            .get()
+            .then((res) => {
+                res.forEach((doc) => {
+                    setUserDetails(doc.data());
+                    setRightPanel(<Profile user={doc.data()}/>)
+                });
+            });
+
+    }, [user])
 
     function handleItemSelected(tabName) {
         let componentToRender;
         switch (tabName) {
             case 'profile':
-                componentToRender = <Profile user={user}/>
+                componentToRender = <Profile user={userDetails}/>
                 break;
             case 'models':
-                componentToRender = <MyModels user={user}/>
+                componentToRender = <MyModels user={userDetails}/>
                 break;
             case 'settings':
-                componentToRender = <Settings user={user}/>
+                componentToRender = <Settings user={userDetails}/>
                 break;
             case 'sign_out':
-                componentToRender = <SignOut user={user}/>
+                componentToRender = <SignOut user={userDetails}/>
         }
 
         setRightPanel(componentToRender)
@@ -51,7 +63,7 @@ function Account(props) {
                     <div id="avatarAndName">
                         <div id="avatar">
                             <img id="avatar-image"
-                                 src="https://musicart.xboxlive.com/7/4d4d6500-0000-0000-0000-000000000002/504/image.jpg?w=300&h=300"
+                                 src="https://st3.depositphotos.com/9998432/13335/v/450/depositphotos_133351928-stock-illustration-default-placeholder-man-and-woman.jpg"
                                  alt='avatarka'/>
                         </div>
                         <div id='userName'>
@@ -82,25 +94,51 @@ function Account(props) {
         ;
 }
 
-function Profile(user) {
+function Profile({user}) {
     return (<React.Fragment>
         <div id='profileTitle'>
             Profile
         </div>
         <div id='inputs'>
-            <CustomInput inputName='Name' value={user.name} />
-            <CustomInput inputName='Username' value={ !!user ? ('@' + user?.email?.split('@')?.[0]) : '@vkusiak'} />
-            <CustomInput inputName='Email' value={user.email} />
-            <CustomInput inputName='Phone' value={user.name} placeholder='+3801231231'/>
+            <CustomInput inputName='Name' value={user?.name}/>
+            <CustomInput inputName='Username' value={!!user ? ('@' + user?.email?.split('@')?.[0]) : '@vkusiak'}/>
+            <CustomInput inputName='Email' value={user?.email}/>
+            <CustomInput inputName='Phone' value={user?.phone} placeholder='+3801231231'/>
             <CustomInput inputName='Country' placeholder='Україна'/>
-            <CustomInput inputName='City'  placeholder='Львів'/>
-            <CustomInput inputName='Address'  placeholder='Червона площа будинок 14 квартира 88'/>
+            <CustomInput inputName='City' placeholder='Львів'/>
+            <CustomInput inputName='Address' placeholder='Червона площа будинок 14 квартира 88'/>
         </div>
     </React.Fragment>)
 }
 
-function MyModels(props) {
-    return null;
+function MyModels({user}) {
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        fetchMyPosts()
+    }, [setPosts])
+
+    const fetchMyPosts = async () => {
+        const myPosts = []
+        if (!!user) {
+            let myPostsRaw = await Firebase.firestore().collection("products").where("userId", "==", user.id).get()
+            myPostsRaw = myPostsRaw.docs
+            myPostsRaw.map((data, index) => {
+                myPosts.push(data.data())
+            })
+            setPosts(myPosts);
+        }
+    }
+
+    return (<React.Fragment>
+        <div id="container-mypost">
+            {!!posts.length &&
+            posts.map((post, index) => (
+                <PostCard class="featuredCard" product={post} index={index} key={index}/>
+            ))}
+        </div>
+    </React.Fragment>)
 }
 
 function Settings(props) {

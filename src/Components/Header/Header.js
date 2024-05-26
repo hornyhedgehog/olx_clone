@@ -49,24 +49,26 @@ function Header({value = "", showSearch = true}) {
     };
     return (
         <div className={showSearch ? "headerParentDiv" : "headerParentDivWithoutSearch"}>
-            <div className='headerTopBar'>
-                <div id="createPostLink" onClick={() => history.push("/createPost")}>
-                    СТВОРИТИ НОВИЙ ПОСТ
-                </div>
-                <div className="homeLink" onClick={() => history.push("/")}>
-                    Домівка
-                </div>
-                <div className="favouritesLink" onClick={() => history.push("/favourites")}>
-                    Вподобані
-                </div>
-                <div className="accountLink" onClick={() => history.push("/account")}>
-                    Профіль
-                </div>
-            </div>
-            {showSearch && (<div className="searchContainer">
+            <div className="headerTopBar">
                 <div className="logo" onClick={() => history.push("/")}>
                     <Logo/>
                 </div>
+                <div className='headerTopBarLinks'>
+                    <div id="createPostLink" onClick={() => history.push("/createPost")}>
+                        СТВОРИТИ НОВИЙ ПОСТ
+                    </div>
+                    <div className="homeLink" onClick={() => history.push("/")}>
+                        Домівка
+                    </div>
+                    <div className="favouritesLink" onClick={() => history.push("/favourites")}>
+                        Вподобання
+                    </div>
+                    <div className="accountLink" onClick={() => history.push("/account")}>
+                        Профіль
+                    </div>
+                </div>
+            </div>
+            {showSearch && (<div className="searchContainer">
                 <div className="searchBlock">
                     <div id='motivation'>
                         <p>Створюй, поширюй, досліджуй</p>
