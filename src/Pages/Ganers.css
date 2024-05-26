@@ -1,0 +1,20 @@
+.header {
+    font-size: 36px;
+    font-weight: bold;
+    color: #227F76;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.cardContainerGeners {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+}
+
+.cardContainerGeners > div {
+    margin-right: 2em;
+}

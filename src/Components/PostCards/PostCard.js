@@ -51,7 +51,7 @@ function PostCard({product, index, isFavourite=false}) {
                         <p className="name"> {product.name}</p>
                     </div>
                     <div id='content-right'>
-                        <p className="rate">{product.price}</p>
+                        <p className="rate">{product.price} ₴</p>
                     </div>
                 </div>
             </div>

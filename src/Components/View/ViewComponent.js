@@ -28,6 +28,10 @@ function ViewComponent() {
         }
     }, [history, postContent]);
 
+    const postGaners = postContent.genres;
+    const strCopy = postGaners.split(" ");
+
+
     return (
         <React.Fragment>
             <div className="viewParentHorizontalDiv">
@@ -46,25 +50,36 @@ function ViewComponent() {
                 {" "}
                 <div className="rightSection">
                     <div className="productDetails">
-                        <span>{postContent.name}</span>
-                        <p>{postContent.genres}</p>
-                        <p className={'productPrice'}>{postContent.price} </p>
-                        <button className="preview-button">Preview model</button>
-                        <button className="download-button">Download model</button>
+                        <span className="itemName">{postContent.name}</span>
+                        <ol className="ganers-list">
+                            {strCopy.map((item) => (
+                                <li className={"ganers-list-item"} key={item}>{<button className="ganers-button"
+                                                                                       onClick={() => history.push(`/ganers/${item}`)}>{"<   " + item + ""}</button>}</li>
+                            ))}
+                        </ol>
+                        {/*<p>{postContent.genres}</p>*/}
+                        <p className={'productPrice'}>{"Ціна: " + postContent.price + "₴"} </p>
+                        <div className="model-buttons-box">
+                            <button className="preview-button"><img
+                                src="https://static.thenounproject.com/png/4937104-200.png" alt='3d'
+                                className="previewImage"/></button>
+                            <button className="download-button"><i className="fa fa-download"></i> Завантажити</button>
+                        </div>
                         <p>Created {postContent.createdAt}</p>
                     </div>
 
-                </div>s
+                </div>
+                s
 
             </div>
             <div className="bottomVerticalSection">
                 <div className="descriptionSection">
                     {/*{postContent?.description &&*/}
-                        <div className="productDescription">
-                            <p className="p-bold">Product Description</p>
-                            <p>{postContent.description || "While the model has high details and is better suitable for printing on an SLA printer, it can also be printed on an FDM printer, especially at a higher scale. You'll find two pre-sliced G-codes in the files section, which use PrusaSlicer's organic supports for easy removal."}</p>
+                    <div className="productDescription">
+                        <p className="p-bold">Product Description</p>
+                        <p>{postContent.description || "While the model has high details and is better suitable for printing on an SLA printer, it can also be printed on an FDM printer, especially at a higher scale. You'll find two pre-sliced G-codes in the files section, which use PrusaSlicer's organic supports for easy removal."}</p>
 
-                        </div>
+                    </div>
 
                     {!!userDetails &&
                         <div className="contactDetails">

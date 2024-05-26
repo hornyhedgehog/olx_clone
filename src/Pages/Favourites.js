@@ -27,6 +27,7 @@ function Favourites(props) {
                 const product = data.data()
                 favouritePosts.push(product)
             })
+            console.log(favouritePosts)
             setPosts(favouritePosts);
         }
     }

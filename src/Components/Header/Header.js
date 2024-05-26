@@ -51,16 +51,16 @@ function Header({value = "", showSearch = true}) {
         <div className={showSearch ? "headerParentDiv" : "headerParentDivWithoutSearch"}>
             <div className='headerTopBar'>
                 <div id="createPostLink" onClick={() => history.push("/createPost")}>
-                    CREATE NEW POST
+                    СТВОРИТИ НОВИЙ ПОСТ
                 </div>
                 <div className="homeLink" onClick={() => history.push("/")}>
-                    Home
+                    Домівка
                 </div>
                 <div className="favouritesLink" onClick={() => history.push("/favourites")}>
-                    Favourites
+                    Вподобані
                 </div>
                 <div className="accountLink" onClick={() => history.push("/account")}>
-                    Account
+                    Профіль
                 </div>
             </div>
             {showSearch && (<div className="searchContainer">
@@ -74,12 +74,12 @@ function Header({value = "", showSearch = true}) {
                     <div id='searchInputContainer'>
                         <div className="placeSearch">
                             <input type="text"
-                                   placeholder="Search specific product..."
+                                   placeholder="Пошук моделей..."
                                    value={wordEntered}
                                    onChange={(text) => (setWordEntered(text.target.value))}/>
                         </div>
                         <input className="searchButton" type="button"
-                               value="SEARCH" onClick={handleFilter}/>
+                               value="ПОШУК" onClick={handleFilter}/>
                     </div>
 
                 </div>

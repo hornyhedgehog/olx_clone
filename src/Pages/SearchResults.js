@@ -50,7 +50,7 @@ function SearchResults(props) {
         <div>
             <Header value={props.match.params.filter}/>
             <div id="header">
-                Search results for &quot;{props.match.params.filter}&quot;
+                Результат пошуку &quot;{props.match.params.filter}&quot;
             </div>
             <div id="cardContainer">
                 {results.map((value, index) => <PostCard product={value} key={index}/>)}

@@ -60,7 +60,7 @@ function NewestModels() {
     return (
         <div className="newestContainer">
             <div className="newestText">
-                NEWEST MODELS
+                НАЙНОВІШІ МОДЕЛІ
             </div>
             <div className="newestCardContainer">
                 {displayCards}

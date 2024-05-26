@@ -64,7 +64,7 @@ function Posts() {
             {posts && !loading && (
                 <div id='allModelsContainer'>
                     <div id='heading'>
-                        ALL MODELS
+                        ВСІ МОДЕЛІ
                     </div>
                     <div>
                         <div className="posts-list"> {quickMenuCards}</div>
