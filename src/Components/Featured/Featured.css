@@ -2,7 +2,7 @@
     background-color: lightgrey;
     width: auto;
     padding: 10px 20px 10px 50px;
-    height: 60vh;
+     height: fit-content;
 }
 
 .featuredText {
@@ -14,8 +14,8 @@
 .featuredCardContainer {
     display: flex;
     flex-direction: row;
-    height: auto;
     width: auto;
+    height: fit-content;
 }
 
 .featuredCardContainer > div {
