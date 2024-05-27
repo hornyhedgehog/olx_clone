@@ -9,10 +9,10 @@
 }
 
 .cardContainerGeners {
-    display: flex;
-    flex-direction: row;
-    height: auto;
-    width: auto;
+    padding-left: 2vw;
+    display: grid;
+    grid-template-columns: 5fr 5fr 5fr 5fr 5fr;
+    grid-template-rows: 5fr 5fr 5fr 5fr 5fr;
 }
 
 .cardContainerGeners > div {

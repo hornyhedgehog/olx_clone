@@ -56,8 +56,8 @@ function PostCard({product, index, isFavourite=false}) {
                 </div>
             </div>
             <div className="card-overlay">
-                {!isFavourite && <div className="favorite">
-                    <Heart handleClick={(event) => (handleFavouriteClick(event, user))}/>
+                { <div className="favorite">
+                    <Heart handleClick={(event) => (handleFavouriteClick(event, user))} isFavorite={isFavourite}/>
                 </div>}
 
             </div>

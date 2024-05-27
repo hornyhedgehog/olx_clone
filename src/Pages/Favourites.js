@@ -27,8 +27,13 @@ function Favourites(props) {
                 const product = data.data()
                 favouritePosts.push(product)
             })
-            console.log(favouritePosts)
-            setPosts(favouritePosts);
+
+            const isUnique = (obj, index, self) =>
+                self.findIndex(item => item.productID === obj.productID) === index;
+
+            const uniqueArray = favouritePosts.filter(isUnique);
+
+            setPosts(uniqueArray);
         }
     }
 
@@ -39,7 +44,7 @@ function Favourites(props) {
         {!!user &&
             (<div>
                 <div id="header">
-                    Favourites
+                    Вподобані
                 </div>
                 <div id="cardContainer">
                     {posts.map((post, index) => (<PostCard product={post} key={index} isFavourite={true}/>))}
