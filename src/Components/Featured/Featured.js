@@ -60,7 +60,7 @@ function Featured() {
     return (
         <div className="featuredContainer">
             <div className="featuredText">
-                FEATURED MODELS
+                ПОПУЛЯРНІ МОДЕЛІ
             </div>
             <div className="featuredCardContainer">
                 {displayCards}

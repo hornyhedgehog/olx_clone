@@ -13,12 +13,12 @@ function ModelViewer({src}) {
             <Flex flexGrow={1} padding={1}>
                 <Box border='1px' borderColor='blue'>
                     <StlViewer
-                        width={1075}
+                        width={1350}
                         height={732}
                         url={src || 'elephant.stl'}
                         groundColor='rgb(255, 255, 255)'
-                        objectColor='rgb(255,255,0)'
-                        skyboxColor='rgb(255, 0, 255)'
+                        objectColor='rgb(34, 127, 118)'
+                        // skyboxColor='rgb(255, 0, 255)'
                         // gridLineColor='rgb(0, 0, 0)'
                         lightColor='rgb(255, 255, 255)'
                         volume={setVolume}
@@ -26,7 +26,7 @@ function ModelViewer({src}) {
                 </Box>
             </Flex>
             <div id='volumeText'>
-                {`Volume: ${volume.toFixed(1)} cm^3`}
+                {`Об'єм: ${volume.toFixed(1)} cm^3`}
             </div>
         </div>
     )

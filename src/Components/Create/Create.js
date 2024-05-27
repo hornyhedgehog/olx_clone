@@ -145,13 +145,13 @@ const Create = () => {
             {loading && <GoLoading/>}
             <div id='centerDiv'>
                 <div className="metadataBlock">
-                    <label>Name</label>
+                    <label>Назва: </label>
                     <br/>
                     <input
                         className="inputs"
                         type="text"
                         name="Name"
-                        placeholder='ex. Car model'
+                        placeholder='наприклад Дрон'
                         value={name}
                         onChange={(e) => {
                             setName(e.target.value);
@@ -159,7 +159,7 @@ const Create = () => {
                         required
                     />
                     <br/><br/>
-                    <label>Genres</label>
+                    <label>Жанри: </label>
                     <br/>
                     <input
                         className="inputs"
@@ -172,7 +172,7 @@ const Create = () => {
                     />
                 </div>
                 <div className="metadataBlock">
-                    <label>Description</label>
+                    <label>Опис: </label>
                     <br/>
                     <input
                         className="inputs"
@@ -185,7 +185,7 @@ const Create = () => {
                     />
                     <br/>
                     <br/>
-                    <label>Price</label>
+                    <label>Вартість: </label>
                     <br/>
                     <input
                         className="inputs"
@@ -226,7 +226,7 @@ const Create = () => {
                 </div>
 
                 <div className="metadataBlock">
-                    3D Model
+                    3D Модель
                     <div id='modelInputBlock'>
                         <input
                             type="file"
@@ -235,7 +235,7 @@ const Create = () => {
                     </div>
                 </div>
                 <button className="uploadBtn" onClick={handleSubmit}>
-                    Submit
+                    Опублікувати
                 </button>
             </div>
         </Fragment>

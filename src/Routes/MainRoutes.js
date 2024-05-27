@@ -4,12 +4,14 @@ import Home from '../Pages/Home'
 import Signup from '../Pages/Signup'
 import Login from '../Pages/Login'
 import CreatePost from '../Pages/CreatePost'
+import sPage from '../Pages/Ganers'
 import ViewPost from '../Pages/ViewPost'
 import ViewMore from '../Pages/ViewMore'
 import AccountPage from "../Pages/MyAccount";
 import Favourites from "../Pages/Favourites";
 import SearchResults from "../Pages/SearchResults";
 import ModelViewer from "../Components/ModelViewer/ModelViewer";
+import GanersPage from "../Pages/Ganers";
 
 
 function MainRoutes() {
@@ -33,6 +35,7 @@ function MainRoutes() {
            <Route path="/createPost">
                <CreatePost/>
            </Route>
+           <Route path="/ganers/:ganerHash" component={GanersPage} />
            <Route path="/view">
                <ViewPost/>
            </Route>

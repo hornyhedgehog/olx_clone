@@ -1,8 +1,13 @@
-import React, {useContext, useRef} from 'react'
+import React, {useContext, useEffect, useRef} from 'react'
 
-export default function Heart({handleClick}) {
+export default function Heart({handleClick, isFavorite = false}) {
 
     const heartRef = useRef(null)
+
+    useEffect(() => {
+        if (isFavorite)
+            heartRef.current.src = "https://icons.iconarchive.com/icons/designbolts/free-valentine-heart/256/Heart-icon.png"
+    });
 
     function handleFocus(event) {
         heartRef.current.src = (event.type === "mouseout" ? "https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png" : "https://icons.iconarchive.com/icons/designbolts/free-valentine-heart/256/Heart-icon.png")

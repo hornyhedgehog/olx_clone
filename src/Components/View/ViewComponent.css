@@ -23,11 +23,14 @@
     width: 37vw;
 }
 
-.viewParentHorizontalDiv .rightSection .productDetails :first-child {
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #002f34;
+.itemName{
     font-size: 34px;
+    font-weight: 700;
+    color: #002f34;
+}
+
+.viewParentHorizontalDiv .rightSection .productDetails :first-child {
+    margin-bottom: 8px;
     line-height: 32px;
     margin-bottom: 140px;
 }
@@ -63,44 +66,95 @@
     color: black
 }
 
+.ganers-list-item {
+    display: inline-block;
+    height: 40px;
+    margin-right: 10px; /* add spacing between items */
+    padding-left: 5px;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+}
+
+.ganers-list-item:hover {
+    background-color: transparent;
+}
+
+.ganers-list {
+    /*display: inline;*/
+    height: 40px;
+    padding-inline-start: 0;
+    padding-bottom: 40px;
+    margin-bottom: 100px;
+}
+
+.ganers-button {
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.ganers-button:hover {
+    background-color: lightgray;
+}
+
+.model-buttons-box {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.previewImage {
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .preview-button {
-    width: 200px;
     height: 75px;
-    background-color: orange;
+    background-color: white;
     color: white;
     font-size: 24px;
-    border: none;
+    border: 2px solid black;
+    border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    padding: 10px 20px;
-    margin: 30px;
+    padding: 6px 30px;
+
+}
+
+.preview-button:hover {
+    background-color: lightgray;
 }
 
 .download-button {
     width: 250px;
     height: 75px;
-    background-color: red;
+    background-color: #227F76;
     color: white;
     font-size: 24px;
     border: none;
     cursor: pointer;
     text-align: center;
-    padding: 10px 20px;
-    margin: 30px;
+    padding: 20px 20px;
+    border-radius: 5px;
 }
 
 .download-button:hover {
-    width: 250px;
-    height: 75px;
-    background-color: black;
-    color: white;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    padding: 10px 20px;
-    margin: 30px;
+    background-color: #0A5C5A;
+}
+
+.download-button img {
+    margin-right: 5px; /* Adjust spacing between icon and text */
+    height: 20px; /* Set icon image height */
+    width: 20px; /* Set icon image width */
 }
 
 .viewParentHorizontalDiv .rightSection .contactDetails {
