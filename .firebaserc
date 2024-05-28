@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "olxcopy-7dc44"
-  }
+    "default": "olxcopy-7dc44",
+    "prod": "printing-house-bf5e3"
+  },
+  "targets": {},
+  "etags": {}
 }

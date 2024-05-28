@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {useHistory} from "react-router-dom";
 import { Firebase } from "../../firebase/config";
 import Logo from "../../olx-logo.png";
@@ -10,12 +10,18 @@ function Login() {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [loading,setLoading]=useState(false)
+  const location = useLocation()
+  let [redirectTo, setRedirectTo] = useState(location?.state);
   const history = useHistory()
+
   const handleSubmit = (e) => {
     setLoading(true)
     e.preventDefault();
     Firebase.auth().signInWithEmailAndPassword(email,password).then(()=>{
-      history.push("/")
+      if (history?.location?.state === "chat-login"){
+        history.push("/chat")
+      } else  history.push("/")
+
     }).catch((error)=>{
       alert(error.message)
     })

@@ -12,6 +12,7 @@ import Favourites from "../Pages/Favourites";
 import SearchResults from "../Pages/SearchResults";
 import ModelViewer from "../Components/ModelViewer/ModelViewer";
 import GanersPage from "../Pages/Ganers";
+import Chat from "../Components/Chat/Chat";
 
 
 function MainRoutes() {
@@ -43,7 +44,7 @@ function MainRoutes() {
                <ViewMore/>
            </Route>
            <Route path="/results/:filter" component={SearchResults}/>
-           <Route path="/testModel" component={ModelViewer}/>
+           <Route path="/chat" component={Chat}/>
 
        </Router>
     )
