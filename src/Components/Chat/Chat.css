@@ -171,7 +171,7 @@
   position: fixed;
   right: 0;
   top: 50%;
-  transform: translateY(-50%) translateX(99%); /* Center vertically */
+  transform: translateY(-50%) translateX(90%); /* Center vertically */
   width: 728px;
   height: 100%; /* Adjust chat window size */
   background-color: #fff;

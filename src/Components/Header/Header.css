@@ -26,7 +26,7 @@
 .headerTopBarLinks {
     display: flex;
     justify-content: flex-end;
-    margin-right: 1em;
+    margin-right: 5em;
 }
 
 .headerTopBarLinks > div {
