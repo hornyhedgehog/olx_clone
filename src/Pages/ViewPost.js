@@ -2,6 +2,7 @@ import React from 'react'
 
 import Header from '../Components/Header/Header'
 import ViewComponent from '../Components/View/ViewComponent'
+import Chat from "../Components/Chat/Chat";
 
 
 function ViewPost(props) {
@@ -10,6 +11,7 @@ function ViewPost(props) {
             
             <Header />
             <ViewComponent/>
+            <Chat/>
             
         </div>
     )

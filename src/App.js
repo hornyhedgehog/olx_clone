@@ -14,7 +14,6 @@ function App() {
                 <ContextAllPost>
                     <ContextPost>
                         <MainRoutes/>
-                        <Chat/>
                     </ContextPost>
                 </ContextAllPost>
             </ContextAuth>
