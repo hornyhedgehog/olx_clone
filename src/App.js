@@ -5,6 +5,7 @@ import ContextAuth from "./contextStore/AuthContext";
 import ContextPost from "./contextStore/PostContext";
 import MainRoutes from "./Routes/MainRoutes";
 import {FavouritesContext} from "./contextStore/FavouritesContext";
+import Chat from "./Components/Chat/Chat";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <ContextAllPost>
                     <ContextPost>
                         <MainRoutes/>
+                        <Chat/>
                     </ContextPost>
                 </ContextAllPost>
             </ContextAuth>
