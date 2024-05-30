@@ -16,9 +16,10 @@
     flex-direction: row;
     width: auto;
     height: fit-content;
+    margin-left: 2em;
 }
 
 .featuredCardContainer > div {
-    margin-right: 2em;
+    margin-right: 10em;
 }
 

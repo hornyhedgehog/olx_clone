@@ -54,7 +54,7 @@ function Account(props) {
         setRightPanel(componentToRender)
 
     }
-
+// '@' + user.email.split('@')[0] ||
     return (
         <React.Fragment>
             <Header showSearch={false}/>
@@ -70,16 +70,16 @@ function Account(props) {
                             {user.name || 'Vitaliy Kusiak'}
                         </div>
                         <div id='nickname'>
-                            {'@' + user.email.split('@')[0] || '@vkusiak'}
+                            { '@vkusiak'}
                         </div>
 
                     </div>
                     <div id="link-list">
                         <ul>
-                            <li onClick={() => (handleItemSelected('profile'))}>Profile</li>
-                            <li onClick={() => (handleItemSelected('models'))}>My Models</li>
-                            <li onClick={() => (handleItemSelected('settings'))}>Settings</li>
-                            <li onClick={() => (handleItemSelected('sign_out'))}>Sign out</li>
+                            <li onClick={() => (handleItemSelected('profile'))}>Профіль</li>
+                            <li onClick={() => (handleItemSelected('models'))}>Мої моделі</li>
+                            <li onClick={() => (handleItemSelected('settings'))}>Налаштування</li>
+                            <li onClick={() => (handleItemSelected('sign_out'))}>Вихід</li>
                         </ul>
 
                     </div>
@@ -94,19 +94,20 @@ function Account(props) {
         ;
 }
 
+// <CustomInput inputName='Username' value={!!user ? ('@' + user?.email?.split('@')?.[0]) : '@vkusiak'}/>
 function Profile({user}) {
     return (<React.Fragment>
         <div id='profileTitle'>
-            Profile
+            Профіль
         </div>
         <div id='inputs'>
-            <CustomInput inputName='Name' value={user?.name}/>
-            <CustomInput inputName='Username' value={!!user ? ('@' + user?.email?.split('@')?.[0]) : '@vkusiak'}/>
-            <CustomInput inputName='Email' value={user?.email}/>
-            <CustomInput inputName='Phone' value={user?.phone} placeholder='+3801231231'/>
-            <CustomInput inputName='Country' placeholder='Україна'/>
-            <CustomInput inputName='City' placeholder='Львів'/>
-            <CustomInput inputName='Address' placeholder='Червона площа будинок 14 квартира 88'/>
+            <CustomInput inputName="Ім`я" value={user?.name}/>
+            <CustomInput inputName="Ім`я користувача" value={'@vkusiak'}/>
+            <CustomInput inputName='Пошта' value={user?.email}/>
+            <CustomInput inputName='Номер телефону' value={user?.phone} placeholder='+3801231231'/>
+            <CustomInput inputName='Країна' placeholder='Україна'/>
+            <CustomInput inputName='Місто' placeholder='Львів'/>
+            <CustomInput inputName='Адреса' placeholder='Площа Героїв України будинок 14 квартира 88'/>
         </div>
     </React.Fragment>)
 }

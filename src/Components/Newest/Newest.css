@@ -17,9 +17,11 @@
     flex-direction: row;
     width: 100%;
     height: auto;
+    margin-left: 2em;
+
 }
 
 .newestCardContainer > div {
-    margin-right: 2em;
+    margin-right: 10em;
 }
 
