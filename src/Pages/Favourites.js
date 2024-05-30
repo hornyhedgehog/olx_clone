@@ -44,7 +44,7 @@ function Favourites(props) {
         {!!user &&
             (<div>
                 <div id="header">
-                    Вподобані
+                    <b className={"favoriteText"}>Вподобані</b>
                 </div>
                 <div id="cardContainer">
                     {posts.map((post, index) => (<PostCard product={post} key={index} isFavourite={true}/>))}

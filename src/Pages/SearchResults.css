@@ -10,6 +10,11 @@
     font-size: 30px;
 }
 
+#textHeaderRes {
+    color: red;
+    font-size: 1px;
+}
+
 #loginHeader:hover {
     cursor: pointer;
     color: lightblue;

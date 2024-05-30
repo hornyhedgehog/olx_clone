@@ -10,6 +10,11 @@
     font-size: 30px;
 }
 
+.favoriteText{
+    color: #227F76;
+    font-size: 36px;
+}
+
 #loginHeader:hover {
     cursor: pointer;
     color: lightblue;
