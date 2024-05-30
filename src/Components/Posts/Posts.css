@@ -17,7 +17,7 @@
 .posts-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-column-gap: 5em;
+    grid-column-gap: 2em;
     grid-row-gap: 70px;
-    margin-left: 2em;
+    margin-left: 1em;
 }

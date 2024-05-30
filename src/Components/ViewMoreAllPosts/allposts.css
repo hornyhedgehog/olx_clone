@@ -1,24 +1,23 @@
-.display-all-parent{
+.display-all-parent {
     padding-top: 6em;
     padding-bottom: 1em;
-    margin:0 1rem;
+    margin: 0 1rem;
     background-color: #ebeeef;
 }
 
-.container-allpost{
-   
+.container-allpost {
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     justify-content: center;
 }
 
-.all-post-card{
-  /* display:flex;
-  justify-content: space-around;
-  flex-wrap: wrap; */
-  margin: 1em ;
-    
-    
+.all-post-card {
+    /* display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap; */
+    margin: 1em;
+
 
 }
